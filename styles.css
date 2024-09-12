@@ -74,37 +74,48 @@ div .WhatsApp img {
   position: fixed;
   z-index: 1000;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.75);
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.close {
-  color: #aaa;
+.slider {
   display: flex;
-  justify-content: flex-end;
-  font-size: 28px;
-  font-weight: bold;
+  align-items: center;
+  justify-content: center;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
+.slider-img {
+  width: 100px;
+  height: 100px;
+  margin: 0 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.center-img {
+  width: 300px;
+  height: 300px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  color: white;
   cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  left: 5%;
+}
+
+.right-arrow {
+  right: 5%;
 }
 
 .btn1 {

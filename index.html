@@ -28,11 +28,15 @@
       <img alt="Chat on WhatsApp" src="images/whatsapp.png" /></a>
   </div>
   <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
+    <span class="arrow left-arrow" onclick="moveSlide(-1)">&#9664;</span>
+    <div class="slider">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+    <span class="arrow right-arrow" onclick="moveSlide(1)">&#9654;</span>
   </div>
-  <script src="index.ts"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>
