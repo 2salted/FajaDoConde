@@ -1,5 +1,4 @@
 const modal = document.getElementById("modal");
-const outOfSlider = document.getElementsByClassName("slider-container");
 
 document.querySelectorAll('.btn-test').forEach(button => {
   button.addEventListener('click', () => {
@@ -13,9 +12,6 @@ window.addEventListener('click', (event) => {
   }
 });
 
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slider-img');
-//
 // function moveSlide(direction) {
 //   slides.forEach((slide, index) => {
 //     slide.classList.remove('left-img', 'center-img', 'right-img');
@@ -36,4 +32,3 @@ const slides = document.querySelectorAll('.slider-img');
 //   slides[currentSlide].classList.add('center-img');
 //   slides[nextSlide].classList.add('right-img');
 // }
-
