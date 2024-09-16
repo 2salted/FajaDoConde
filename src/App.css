@@ -71,7 +71,7 @@ div .WhatsApp img {
 }
 
 .modal {
-  display: none;
+  display: flex;
   position: fixed;
   z-index: 1000;
   top: 0;
