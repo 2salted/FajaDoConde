@@ -46,10 +46,10 @@ export default function App() {
             overflow: 'hidden',
           }}
         >
-          <span onClick={() => setShowModal(false)} className="absolute top-12 right-20 text-white text-4xl font-bold hover:text-red-500 hover:cursor-pointer focus:outline-none">&times;</span>
+          <span onClick={() => setShowModal(false)} className="sm:right-20 absolute top-12 right-10 text-white text-4xl font-bold hover:text-red-500 hover:cursor-pointer focus:outline-none">&times;</span>
           <span className="arrow left-arrow">&larr;</span>
           <div className="slider">
-            {/* Slider content */}
+            <img src='' />
           </div>
           <span className="arrow right-arrow">&rarr;</span>
         </div>
