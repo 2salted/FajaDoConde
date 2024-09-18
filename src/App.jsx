@@ -1,10 +1,20 @@
 import { useState } from 'react';
 import './App.css';
 import whatsapp from './images/whatsapp.png';
+import galleryMedia from './galleryObjects.js'
 
 export default function App() {
   const [btnImage, setBtnImage] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
+  const searchGallery = (key) => {
+    return galleryMedia.find((item) => item.key == key)
+  }
+
+  if (showModal) {
+    let gallery = searchGallery(btnImage);
+    console.log(gallery);
+  }
 
   return (
     <div>
@@ -49,7 +59,6 @@ export default function App() {
           <span onClick={() => setShowModal(false)} className="sm:right-20 absolute top-12 right-10 text-white text-4xl font-bold hover:text-red-500 hover:cursor-pointer focus:outline-none">&times;</span>
           <span className="arrow left-arrow">&larr;</span>
           <div className="slider">
-            <img src='' />
           </div>
           <span className="arrow right-arrow">&rarr;</span>
         </div>
