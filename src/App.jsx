@@ -6,13 +6,14 @@ import galleryMedia from './galleryObjects.js'
 export default function App() {
   const [btnImage, setBtnImage] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  let gallery;
 
   const searchGallery = (key) => {
     return galleryMedia.find((item) => item.key == key)
   }
 
-  if (showModal) {
-    let gallery = searchGallery(btnImage);
+  if (showModal && btnImage !== null) {
+    gallery = searchGallery(btnImage);
     console.log(gallery);
   }
 
@@ -59,6 +60,11 @@ export default function App() {
           <span onClick={() => setShowModal(false)} className="sm:right-20 absolute top-12 right-10 text-white text-4xl font-bold hover:text-red-500 hover:cursor-pointer focus:outline-none">&times;</span>
           <span className="arrow left-arrow">&larr;</span>
           <div className="slider">
+            {gallery.gallery[0] && gallery.gallery[0][0] ? (
+              <img src={"/images/testImage.jpg"} style={{ width: '200px', height: 'auto' }} alt="Gallery Image" />
+            ) : (
+              <p>No image found</p>
+            )}
           </div>
           <span className="arrow right-arrow">&rarr;</span>
         </div>
@@ -66,4 +72,33 @@ export default function App() {
     </div>
   );
 }
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * 
+ *
+ * 
+ *
+ *
+ *
+ * 
+ *
+ */
 
