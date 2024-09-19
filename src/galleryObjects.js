@@ -1,5 +1,5 @@
 let galleryMedia = [
-  { key: 1, gallery: [["./images/1/testImage.jpg"]] },
+  { key: 1, gallery: [["/images/testImage.jpg"]] },
   { key: 2, gallery: [[]] },
   { key: 3, gallery: [[]] },
   { key: 4, gallery: [[]] },
