@@ -63,29 +63,39 @@ export default function App() {
             className="sm:right-20 absolute top-12 right-10 text-white text-4xl hover:text-red-500 
             hover:cursor-pointer focus:outline-none"><X size={30}></X></span>
           <span className="arrow sm:left-[5%] left-1 active:text-orange-500" onClick={() => {
-            if (currImageIndex > 0) {
+            if (currImageIndex >= 0) {
               setCurrImageIndex(currImageIndex - 1);
             }
           }}><ChevronLeft size={50} /></span>
           <div class="slider flex justify-center items-center gap-5 p-4">
-            <img
-              src={gallery.gallery[currImageIndex]}
-              class="hidden lg:block w-1/5 max-w-[12%] h-auto object-cover rounded-xl"
-              alt="Previous Image"
-            />
+            {
+              currImageIndex < 0 ?
+                <div
+                  class="hidden lg:block w-1/5 max-w-[12%] h-auto object-cover rounded-xl"
+                ></div> :
+                <img
+                  src={gallery.gallery[currImageIndex]}
+                  class="hidden lg:block w-1/5 max-w-[12%] h-auto object-cover rounded-xl"
+                  alt="Previous Image"
+                />
+            }
             <img
               src={gallery.gallery[currImageIndex + 1]}
               class="w-3/4 sm:w-2/3 lg:w-1/3 max-w-[450px] h-auto object-cover rounded-xl"
               alt="Current Image"
             />
-            <img
-              src={gallery.gallery[currImageIndex + 2]}
-              class="hidden lg:block w-1/5 max-w-[12%] h-auto object-cover rounded-xl"
-              alt="Next Image"
-            />
+            {
+              currImageIndex + 3 > gallery.gallery.length ?
+                <div class="hidden lg:block w-1/5 max-w-[12%] h-auto object-cover rounded-xl"></div> :
+                <img
+                  src={gallery.gallery[currImageIndex + 2]}
+                  class="hidden lg:block w-1/5 max-w-[12%] h-auto object-cover rounded-xl"
+                  alt="Next Image"
+                />
+            }
           </div>
           <span className="arrow sm:right-[5%] right-1 active:text-orange-500" onClick={() => {
-            if (currImageIndex + 2 < gallery.gallery.length - 1) {
+            if (currImageIndex + 2 < gallery.gallery.length) {
               setCurrImageIndex(currImageIndex + 1);
             }
           }}><ChevronRight size={50} /></span>
