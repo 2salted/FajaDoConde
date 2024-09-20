@@ -36,7 +36,7 @@ export default function App() {
         <div onClick={() => { setBtnImage(12); setShowModal(true); }} className="btn-test btn12">T</div>
         <div onClick={() => { setBtnImage(13); setShowModal(true); }} className="btn-test btn13">P</div>
       </div>
-      <div className="sticky">
+      <div className="sticky select-none">
         <a className="WhatsApp" aria-label="Chat on WhatsApp" href="https://api.whatsapp.com/send?phone=33624553500&text=">
           <img alt="Chat on WhatsApp" src={whatsapp} />
         </a>
@@ -62,21 +62,33 @@ export default function App() {
           <span onClick={() => setShowModal(false)}
             className="sm:right-20 absolute top-12 right-10 text-white text-4xl hover:text-red-500 
             hover:cursor-pointer focus:outline-none"><X size={30}></X></span>
-          <span className="arrow left-arrow" onClick={() => {
+          <span className="arrow sm:left-[5%] left-1 active:text-orange-500" onClick={() => {
             if (currImageIndex > 0) {
               setCurrImageIndex(currImageIndex - 1);
             }
-          }}><ChevronLeft size={40} /></span>
-          <div className="slider">
-            <img src={gallery.gallery[currImageIndex]} width={100} height={100} className='' />
-            <img src={gallery.gallery[currImageIndex + 1]} width={100} height={100} className='w-1/2' />
-            <img src={gallery.gallery[currImageIndex + 2]} width={100} height={100} className='' />
+          }}><ChevronLeft size={50} /></span>
+          <div class="slider flex justify-center items-center gap-5 p-4">
+            <img
+              src={gallery.gallery[currImageIndex]}
+              class="hidden lg:block w-1/5 max-w-[12%] h-auto object-cover rounded-xl"
+              alt="Previous Image"
+            />
+            <img
+              src={gallery.gallery[currImageIndex + 1]}
+              class="w-3/4 sm:w-2/3 lg:w-1/3 max-w-[450px] h-auto object-cover rounded-xl"
+              alt="Current Image"
+            />
+            <img
+              src={gallery.gallery[currImageIndex + 2]}
+              class="hidden lg:block w-1/5 max-w-[12%] h-auto object-cover rounded-xl"
+              alt="Next Image"
+            />
           </div>
-          <span className="arrow right-arrow" onClick={() => {
+          <span className="arrow sm:right-[5%] right-1 active:text-orange-500" onClick={() => {
             if (currImageIndex + 2 < gallery.gallery.length - 1) {
               setCurrImageIndex(currImageIndex + 1);
             }
-          }}><ChevronRight size={40} /></span>
+          }}><ChevronRight size={50} /></span>
         </div>
       )}
     </div>
