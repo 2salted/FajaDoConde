@@ -8,7 +8,6 @@ export default function App() {
   const [btnImage, setBtnImage] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [currImageIndex, setCurrImageIndex] = useState(0);
-  let arrowCss;
   let gallery;
 
   const searchGallery = (key) => {
