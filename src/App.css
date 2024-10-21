@@ -16,7 +16,7 @@ body {
 
 #headImage {
   position: relative;
-  background-image: url(images/i2.JPG);
+  background-image: url("/images/i2.JPG");
   filter: saturate(1.4);
   background-size: cover;
   background-position: center;
